@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+    <action
+        android:id="@+id/toAddressList"
+        app:destination="@+id/select_address_fragment"
+        app:enterAnim="@android:anim/slide_in_left"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right" />
+
+    <action
+        android:id="@+id/redirectToLogin"
+        app:destination="@+id/loginFragment"
+        app:enterAnim="@android:anim/slide_in_left"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right" />
+
+    <action
+        android:id="@+id/toInputFormerMemberIdFragment"
+        app:destination="@+id/inputFormerMemberIdFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"
+        app:popEnterAnim="@android:anim/fade_in"
+        app:popExitAnim="@android:anim/fade_out" />
+
+    <action
+        android:id="@+id/toRegisterFragmentPart1"
+        app:destination="@+id/registerFragmentPart1"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"
+        app:popEnterAnim="@android:anim/fade_in"
+        app:popExitAnim="@android:anim/fade_out" />
+
+
+
+
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.testingproject.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login"/>
+
+    <fragment
+        android:id="@+id/registerFragmentPart1"
+        android:name="com.example.testingproject.registration.RegisterFragmentPart1"
+        android:label="fragment_register_part1"
+        tools:layout="@layout/fragment_register_part1">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.testingproject.MainFragment"
+        android:label="MainFragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerVerificationCodeFragment"
+        android:name="com.example.testingproject.registration.RegisterVerificationCodeFragment"
+        android:label="RegisterVerificationCodeFragment">
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
+    <action
+        android:id="@+id/toRegisterVerificationCodeFragment"
+        app:destination="@+id/registerVerificationCodeFragment"
+        app:enterAnim="@android:anim/slide_in_left"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right">
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </action>
+    <fragment
+        android:id="@+id/RegisterDataMember"
+        android:name="com.example.testingproject.registration.RegisterDataMember"
+        android:label="EditProfileFragment" >
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/toregisterDataMember"
+        app:destination="@+id/RegisterDataMember"
+        app:enterAnim="@android:anim/slide_in_left"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right">
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </action>
+</navigation>
