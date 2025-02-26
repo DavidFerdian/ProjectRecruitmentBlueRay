@@ -2,8 +2,6 @@ package com.example.testingproject.sharedPreference
 
 import android.content.Context
 import com.example.testingproject.dataClass.LoggedUser
-import com.example.testingproject.dataClass.sharedPreferences.LoggedUser
-
 class LoginStatusPreference(context: Context) {
     companion object{
         const val LOGIN_STAT_PREFERENCE_NAME = "login_status_preference"

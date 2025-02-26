@@ -81,7 +81,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="#416FE4"
-                android:onClick="@{() -> loginButtonOnClickHandler.validateUsernameInput()}"
                 android:text="Selanjutnya"
                 android:textStyle="bold"
                 app:cornerRadius="16dp" />

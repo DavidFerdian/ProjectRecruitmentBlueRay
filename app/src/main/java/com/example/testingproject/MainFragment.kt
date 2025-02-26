@@ -34,23 +34,9 @@ class MainFragment : Fragment() {
             LoginStatusPreference(
                 activity as AppCompatActivity
             )
-        navigateToDashboard()
+        navigateToLogin()
         //validateLoggedStatus()
         return binding.root
-    }
-
-    private fun validateLoggedStatus() {
-
-        val loggedStatus = loggedStatusPreference.getUserLoggedStatus()
-        val memberId = loggedStatus.loggedInMemberId
-
-        if (loggedStatus.isLoggedIn == true) {
-            if (memberId != null) {
-                navigateToDashboard()
-            }
-        } else {
-            navigateToLogin()
-        }
     }
 
 
@@ -65,20 +51,5 @@ class MainFragment : Fragment() {
         navController.navigate(R.id.loginFragment, null, options)
     }
 
-
-    private fun navigateToDashboard() {
-
-        navController.addOnDestinationChangedListener { nc: NavController, _: NavDestination, _ ->
-            nc.graph.startDestination = R.id.dashboardFragment
-        }
-
-        val options = NavOptions.Builder()
-            .setPopUpTo(R.id.mainFragment, true)
-            .build()
-
-        findNavController().navigate(
-            NavigationDirections.toDashboard(), options
-        )
-    }
 
 }

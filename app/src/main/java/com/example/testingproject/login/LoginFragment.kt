@@ -2,6 +2,7 @@ package com.example.testingproject.login
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -59,9 +60,12 @@ class LoginFragment : Fragment() {
         binding.loginButtonOnClickHandler = this
 
         binding.tvRegister.setOnClickListener {
+            navigateToRegister()
         }
 
-
+    binding.nextButton.setOnClickListener {
+        validateUsernameInput()
+    }
         return binding.root
     }
 
@@ -89,7 +93,6 @@ class LoginFragment : Fragment() {
             return
         }
 
-        binding.nextButton.isEnabled = false
 
         executeLoginValidation(LoginValidationRequestBody(inputtedPassword,inputtedUsername))
     }
@@ -117,6 +120,7 @@ class LoginFragment : Fragment() {
                 response: Response<LoginSuccesResponse>
             ) {
 
+                Log.i("seriusan?","serius")
                 ProgressDialogUtility.dismissProgressDialog()
                 if (response.body()?.login == true) {
                     this@LoginFragment.setupLoggedUser(response.body()?.token!!)
@@ -147,7 +151,7 @@ class LoginFragment : Fragment() {
     * */
     private fun navigateToAddressList() {
         findNavController().navigate(
-            NavigationDirections.toAddressList()
+            NavigationDirections.toselectAddressFragment()
         )
     }
 

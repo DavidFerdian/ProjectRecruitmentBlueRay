@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:gravity="center_horizontal"
             android:layout_height="wrap_content"
-            android:text="@string/mainFragmentPlaceholderText"
+            android:text="Testing Apps"
             android:layout_centerInParent="true"
             android:textSize="24sp"
             android:layout_marginHorizontal="22dp"/>

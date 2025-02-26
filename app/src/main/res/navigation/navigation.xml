@@ -4,13 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     app:startDestination="@id/mainFragment">
-    <action
-        android:id="@+id/toAddressList"
-        app:destination="@+id/select_address_fragment"
-        app:enterAnim="@android:anim/slide_in_left"
-        app:exitAnim="@android:anim/slide_out_right"
-        app:popEnterAnim="@android:anim/slide_in_left"
-        app:popExitAnim="@android:anim/slide_out_right" />
 
     <action
         android:id="@+id/redirectToLogin"
@@ -50,14 +43,12 @@
         android:id="@+id/registerFragmentPart1"
         android:name="com.example.testingproject.registration.RegisterFragmentPart1"
         android:label="fragment_register_part1"
-        tools:layout="@layout/fragment_register_part1">
+        tools:layout="@layout/fragment_register_part1"/>
 
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.testingproject.MainFragment"
-        android:label="MainFragment">
-
-    </fragment>
+        android:label="MainFragment"/>
 
     <fragment
         android:id="@+id/registerVerificationCodeFragment"
@@ -81,7 +72,7 @@
     <fragment
         android:id="@+id/RegisterDataMember"
         android:name="com.example.testingproject.registration.RegisterDataMember"
-        android:label="EditProfileFragment" >
+        android:label="RegisterDataMember" >
         <argument
             android:name="email"
             app:argType="string" />
@@ -97,5 +88,18 @@
         <argument
             android:name="email"
             app:argType="string" />
+    </action>
+    <fragment
+        android:id="@+id/SelectAddressFragment"
+        android:name="com.example.testingproject.selectAddress.SelectAddressFragment"
+        android:label="SelectAddressFragment" />
+
+    <action
+        android:id="@+id/toselectAddressFragment"
+        app:destination="@+id/SelectAddressFragment"
+        app:enterAnim="@android:anim/slide_in_left"
+        app:exitAnim="@android:anim/slide_out_right"
+        app:popEnterAnim="@android:anim/slide_in_left"
+        app:popExitAnim="@android:anim/slide_out_right">
     </action>
 </navigation>

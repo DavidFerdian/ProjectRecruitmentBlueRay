@@ -5,8 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.testingproject.R
 import com.google.android.material.shape.CornerFamily
-import com.example.testingproject.util.RemoteConfigUtility
-import com.example.testingproject.util.WarningDialogUtility
+
 import kotlinx.android.synthetic.main.activity_intro.*
 
 
@@ -14,13 +13,11 @@ import kotlinx.android.synthetic.main.activity_intro.*
 //Automatically navigate to Main Activity after several seconds
 class IntroActivity : AppCompatActivity() {
 
-    private lateinit var remoteConfigUtility: RemoteConfigUtility
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro)
         this.setupAppLogo()
-        this.setupRemoteConfig()
+        this.redirectToMainActivity()
     }
 
 

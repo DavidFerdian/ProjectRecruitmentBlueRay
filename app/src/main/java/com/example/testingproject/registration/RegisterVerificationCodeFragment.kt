@@ -2,6 +2,7 @@ package com.example.testingproject.registration
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -69,6 +70,7 @@ class RegisterVerificationCodeFragment : Fragment() {
         binding.resendCode.setOnClickListener {
             executeResendCode()
         }
+        binding.textEmail.text = "Masukan Kode Verifikasi Yang telah kami kirim ke " +Email
         return binding.root
     }
 
@@ -102,6 +104,7 @@ class RegisterVerificationCodeFragment : Fragment() {
                 ProgressDialogUtility.dismissProgressDialog()
                 when {
                     response.code() == 200 -> {
+                        Log.i("response",response.toString())
                         navigateTotoregisterDataMember()
                     }
                 }
@@ -131,7 +134,10 @@ class RegisterVerificationCodeFragment : Fragment() {
                 response: Response<RegisterMemberResponse>
             ) {
 
-
+                SnackBarUtility.renderSnackBar(
+                    binding.baseLayout,
+                    "Kode Berhasil Dikirim Silahkan Di check Kembali"
+                )
             }
         })
     }
@@ -139,7 +145,7 @@ class RegisterVerificationCodeFragment : Fragment() {
     private fun navigateTotoregisterDataMember() {
         findNavController().navigate(
             NavigationDirections.toregisterDataMember(
-                RegisterUsernameEditText.text.toString().trim()
+                Email
             )
         )
     }
