@@ -104,7 +104,7 @@ class RegisterVerificationCodeFragment : Fragment() {
                 ProgressDialogUtility.dismissProgressDialog()
                 when {
                     response.code() == 200 -> {
-                        Log.i("response",response.toString())
+                        Log.i("response",response.body().toString())
                         navigateTotoregisterDataMember()
                     }
                 }

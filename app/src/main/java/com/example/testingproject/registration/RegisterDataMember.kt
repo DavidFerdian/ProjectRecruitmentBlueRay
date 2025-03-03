@@ -83,8 +83,8 @@ class RegisterDataMember : Fragment() {
             return
         }
         val inputtedInformation = CustomerRegisterMandatoryRequestBody(
+            newPassword,
             Email,
-            newPhoneNumber,
             newFrontName,
             newBackName,
         )
